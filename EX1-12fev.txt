@@ -1,0 +1,30 @@
+USE DATABASE db_rh_ex1;
+
+CREATE TABLE tb_funcionarios(
+	id bigint not null auto_increment, 		-- //matricula 
+    cargo varchar(20),				-- // cargo do funcionario
+    funcao varchar(20),
+    salario int(20),				-- // salario do funcionario
+    horastrabalhadas int(20),       -- horas trabalhadas no mês
+    
+    
+	primary key(id),
+);
+
+-- populando a tabela tb_funcionarios:
+
+INSERT INTO tb_funcionarios (cargo, funcao, salario, horastrabalhadas) values ("tecnico de laboratorio","exame de sangue",4000,40);
+INSERT INTO tb_funcionarios (cargo, funcao, salario, horastrabalhadas) values ("enfermeiro","tirar sangue",3500,40);
+INSERT INTO tb_funcionarios (cargo, funcao, salario, horastrabalhadas) values ("medico","pediatria",10000,40);
+INSERT INTO tb_funcionarios (cargo, funcao, salario, horastrabalhadas) values ("medico","cardiologista",12000,40);
+INSERT INTO tb_funcionarios (cargo, funcao, salario, horastrabalhadas) values ("porteiro","controlar entrada e saida",1500,40);
+
+
+    
+SELECT * FROM tb_funcionarios -- retorna os funcionários com o salário maior do que 2000.
+    where tb_funcionarios.salario > 2000;
+    
+SELECT * FROM tb_funcionarios -- retorna os funcionários com o salário menor do que 2000.
+    where tb_funcionarios.salario < 2000;
+    
+UPDATE tb_funcionarios set funcao = "dar injecao" where id = 2; -- atualizar funcao do id 2 
